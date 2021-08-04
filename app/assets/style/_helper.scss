@@ -1,0 +1,29 @@
+@mixin flexCenter {
+    justify-content: center;
+    align-items: center;
+}
+@mixin border-left{
+    border-left: 4px solid transparent;
+    &:hover{
+        border-left: 4px solid $secondary;
+    }
+}
+.btn{
+    border-radius: 2px;
+}
+
+.btn-danger{
+    border: 1px solid $danger;
+    background: #fff;
+    color: $danger;
+    &:focus{
+        box-shadow: none;
+    }
+}
+.btn-outline-success{
+    border: 1px solid $secondary;
+    color: $secondary;
+    &:focus{
+        box-shadow: none;
+    }
+}

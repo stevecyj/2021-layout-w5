@@ -1,12 +1,325 @@
 ---
-title: 首頁
+title: Admin
 layout: ./app/layout.ejs
 engine: ejs
 current: index
 ---
 
-<h1>
-  這是一段話
-</h1>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="cardView d-f flex-wrap justify-between">
+            <div class="card_header">
+                <div class="card-pic">
+                    <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/week5/emir.jpeg?raw=true" alt="card-pic">
+                </div>
+            </div>
+            <div class="card_body d-f mb-9">
+                    <div class="userInfo">
+                        <p class="color-g9 mb-2">#1</p>
+                        <p class="color-g9">Admin</p>
+                        <p class="userName color-g9 font-m mb-2">Emir Wicks</p>
+                        <p><a class="color-g6 font-s mb-5" href="#">emir.wicks@mail.com</a></p>
+                        <p class="color-g9 box">verified</p>
+                    </div>
+                    <a class="off-btn font-m" href="#" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="card_footer d-f justify-flex-end">
+            <a class="btn btn-danger" href="#" data-bs-dismiss="modal">Deactivate</a>
+            <input type="submit" class="btn btn-outline-success ml-15" value="Edit">
+            </div>
+        </div>    
+      </div>
+    </div>
+  </div>
 
-<div class="box"></div>
+
+  <div class="modal fade" id="staticBackdrop_2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="newAdmin">
+            <div class="card_header d-f justify-between mb-8">
+                <h3 class="title font-m font-bold ">New Admin</h3>
+                <a class="off-btn font-m" href="#" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="card_body">
+                <div class="account border-b-g4 pb-6 mb-6 ">
+                    <h3 class="title font-s2 mb-4 ">Account</h3>
+                    <form class="" action="index.html">
+                        <div class="mb-4 ">
+                            <label for="name" class="font-s mb-1">Name</label>
+                            <input class="h-51 w100" type="name" id="name" name="account_user" >
+                        </div>
+                        <div>
+                            <label for="email" class="font-s mb-1">Email</label>
+                            <input class="h-51 w100" type="email" id="email" name="account_mail" >
+                        </div>
+                    </form>
+                </div>
+                <div class="verify border-b-g4 pb-6 mb-6">
+                <h3 class="title font-s2 font-bold mb-4">Verification</h3>
+                <span class="color-dander font-d"><i class="fas fa-exclamation-triangle"></i></span>
+                <p class="display-inline mb-4 ml-9">Unverified</p>
+                <a class="btn display-block color-second font-bold" href="#">Send Verification Mail</a>
+                </div>
+                <div class="access_level border-b-g4 pb-6 mb-6">
+                 <h3 class="title mb-4 font-s2 font-bold">Access Level</h3>
+                 <form class="" action="index.html">
+                 <select class="h-51 display-block w100 color-g6" name="level">
+                <option  value="" readonly="readonly">-Choose access level-</option>
+                 <option value="admin">admin</option>
+                </select>
+                 </form>
+                </div>
+                <div class="custom_access mb-8">
+                    <h3 class="title mb-4 font-s2 font-bold ">Custom Access</h3>
+                    <form class="" action="index.html">
+                    <div>
+                        <input class=" checkbox_input display-inline"type="checkbox" name="customAccess" value="lecture">Lecture
+                    </div>
+                    <div>
+                        <input class="checkbox_input  display-inline" type="checkbox" name="customAccess" value="Coupon">Coupon
+                    </div>
+                    <div>
+                        <input class="checkbox_input display-inline" type="checkbox" name="customAccess" value="Message">Message
+                    </div>
+                    <div>
+                        <input class="checkbox_input display-inline" type="checkbox" name="customAccess" value="Setting">Setting
+                    </div>
+                    <div>
+                        <input class="checkbox_input display-inline" type="checkbox" name="customAccess" value="task menu">Task Menu
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card_footer d-f justify-flex-end">
+                <a class="display-block btn btn-outline-success" href="#" data-bs-dismiss="modal">Cancel</a>
+                <input type="submit" class="btn btn-success ml-15" value="Add">
+            </div>
+        </div>
+        </div>    
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="staticBackdrop_3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="editAdmin">
+                <div class="card_header d-f justify-between mb-8">
+                    <h3 class="title font-m font-bold ">Edit Admin</h3>
+                    <a class="off-btn font-m" href="#" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="card_body">
+                    <div class="account border-b-g4 pb-6 mb-6 ">
+                        <h3 class="title font-s2 mb-4 ">Account</h3>
+                        <form class="" action="index.html">
+                            <div class="mb-4 ">
+                                <label for="name" class="font-s mb-1">Name</label>
+                                <input placeholder="Emir Wicks" class="h-51 w100 color-bg-g1 border-none color-g9" type="name" id="name" name="account_user" >
+                            </div>
+                            <div>
+                                <label for="email" class="font-s mb-1">Email</label>
+                                <input class="h-51 w100 color-bg-g1 border-none color-g9" placeholder="emir.wicks@mail.com" type="email" id="email" name="account_mail" >
+                            </div>
+                        </form>
+                    </div>
+                    <div class="verify border-b-g4 pb-6 mb-6">
+                    <h3 class="title font-s2 font-bold mb-4">Verification</h3>
+                    <div class="d-f justify-between">
+                        <div>
+                            <span class="color-second font-s2"><i class="fas fa-check-circle"></i></span>
+                            <p class="display-inline mb-4 ml-9">Verified</p>
+                        </div>
+                            <p class="time color-g9 font-s">2020/4/12</p>
+                    </div>
+                    <a class="btn display-block color-g4" href="#">Send Verification Mail</a>
+                    </div>
+                    <div class="access_level border-b-g4 pb-6 mb-6">
+                     <h3 class="title mb-4 font-s2 font-bold">Access Level</h3>
+                     <form class="" action="index.html">
+                     <select class="h-51 display-block w100 color-g9" name="level">
+                    <option class="display-none" value="" readonly="readonly">-Choose access level-</option>
+                     <option value="admin">Admin</option>
+                    </select>
+                     </form>
+                    </div>
+                    <div class="custom_access  border-b-g4 pb-6 mb-6">
+                        <h3 class="title mb-4 font-s2 font-bold ">Custom Access</h3>
+                        <form class="" action="index.html">
+                        <div>
+                            <input class=" checkbox_input display-inline"type="checkbox" name="customAccess" value="lecture">Lecture
+                        </div>
+                        <div>
+                            <input class="checkbox_input  display-inline" type="checkbox" name="customAccess" value="Coupon">Coupon
+                        </div>
+                        <div>
+                            <input class="checkbox_input display-inline" type="checkbox" name="customAccess" value="Message">Message
+                        </div>
+                        <div>
+                            <input class="checkbox_input display-inline" type="checkbox" name="customAccess" value="Setting">Setting
+                        </div>
+                        <div>
+                            <input class="checkbox_input display-inline" type="checkbox" name="customAccess" value="task menu">Task Menu
+                        </div>
+                        </form>
+                    </div>
+                    <div class="deactivate pb-6 mb-6">
+                        <h3 class="title font-s2 font-bold mb-4">Deactivate Account</h3>
+                        <span class="color-dander font-d"><i class="fas fa-exclamation-triangle"></i></span>
+                        <p class="display-inline mb-4 ml-9 color-dander">This cannot be undone!</p>
+                        <a class="btn display-block color-dander font-bold" href="#">Deactivate This Account</a>
+                        </div>
+                </div>
+                <div class="card_footer d-f justify-flex-end">
+                    <a class="display-block btn btn-outline-success" href="#" data-bs-dismiss="modal">Cancel</a>
+                    <input type="submit" class="btn btn-success ml-15" value="Update">
+                </div>
+            </div>
+            </div>    
+          </div>
+        </div>
+
+
+
+
+<div class="header d-f justify-between align-center color-g9">
+    <div class="admin d-f align-center">
+        <h2 class="title font-bold">Admin</h2>
+        <div class="subtitle">
+            <a data-bs-toggle="modal" data-bs-target="#staticBackdrop_2" href="#">
+                <span class="add-icon fontawesome-free-5"><i class="fas fa-plus"></i></span>
+                <h3 class="display-inline font-bold" >Add New Admin</h3>
+            </a>
+        </div>
+    </div>
+    <div class="admin-aside d-f">
+        <div class="search font-m"><a href="#"><i class="fas fa-search"></i></a></div>
+        <div class="notice font-m"><a href="#"><i class="fas fa-bell"></i></a></div>
+    </div>
+
+</div>
+<div class="adminUser color-g9">
+    <table class="console mb-16">
+        <tr class="border-b-g9 font-bold">
+            <th>ID <span class=" ml-7 color-second"><i class="fas fa-arrow-down"></i></span>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Verified</th>
+            <th></th>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#1</td>
+            <td>Emir Wicks</td>
+            <td>emir.wicks@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop_3" ><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#2</td>
+            <td>Zaina Goldsmith</td>
+            <td>zaina.goldsmith@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#3</td>
+            <td>Mahima Lopez</td>
+            <td>Mahima.Lopez@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#4</td>
+            <td>Pharrell Murray</td>
+            <td>Pharrell.Murray@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#5</td>
+            <td>Annika Mcbride</td>
+            <td>Annika.Mcbride@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#6</td>
+            <td>Fatimah Clark</td>
+            <td>Fatimah.Clark@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#7</td>
+            <td>Klaudia Rhodes</td>
+            <td>Klaudia.Rhodes@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#8</td>
+            <td>Tillie Lucero</td>
+            <td>Tillie.Lucero@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+        <tr class="user_row border-b-g4">
+            <td>#9</td>
+            <td>Sabrina Stephenson</td>
+            <td>Sabrina.Stephenson@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>        
+        <tr class="user_row border-b-g4">
+            <td>#10</td>
+            <td>Annie Smith</td>
+            <td>Annie.Smith@mail.com</td>
+            <td>Yes</td>
+            <td>
+                <a class="view" href="#"><i class="fas fa-eye"></i></a>
+                <a class="edit" href="#"><i class="fas fa-pen"></i></a>
+            </td>
+        </tr>
+
+
+    </table>
+    <ul class="pagination-own d-f justify-flex-end">
+        <li class="pagination-list "><a  class="color-second" href="#"><i class="fas fa-angle-left"></i></a></li>
+        <li class="pagination-list"><a href="#">1</a></li>
+        <li class="pagination-list"><a href="#">2</a></li>
+        <li class="pagination-list"><a href="#">3</a></li>
+        <li class="pagination-list"><a class="color-second" href="#"><i class="fas fa-angle-right"></i></a></li>
+    </ul>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>  

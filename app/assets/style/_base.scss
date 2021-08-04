@@ -1,0 +1,41 @@
+img  {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+*,*:after,*:before {
+    box-sizing: border-box;
+}
+body{
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+    color: $primary;
+    &:hover{
+        color: $secondary;
+    }
+} 
+.card_body .account input{
+    display: block;
+    text-indent: 16px;
+}
+
+form select{
+    line-height: 1.5;
+    padding: 16px;
+}
+.checkbox_input{
+    width: 24px;
+    height: 16px;
+    border: 1px solid $gray-900;
+    border-radius: 2px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+}
+input::-webkit-input-placeholder {
+	color: $gray-900;
+}
+
+
